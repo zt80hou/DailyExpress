@@ -98,7 +98,7 @@
             android:paddingEnd="8dp"
             android:singleLine="true"
             android:textColor="@color/font_dark"
-            android:textColorHint="@color/font_gray"
+            android:textColorHint="@color/font_gray_light"
             android:textSize="14sp"
             android:theme="@style/PrimaryEditText" />
 
@@ -122,7 +122,7 @@
             android:paddingEnd="8dp"
             android:singleLine="true"
             android:textColor="@color/font_dark"
-            android:textColorHint="@color/font_gray"
+            android:textColorHint="@color/font_gray_light"
             android:textSize="14sp"
             android:theme="@style/PrimaryEditText" />
 
@@ -146,7 +146,7 @@
             android:paddingEnd="8dp"
             android:singleLine="true"
             android:textColor="@color/font_dark"
-            android:textColorHint="@color/font_gray"
+            android:textColorHint="@color/font_gray_light"
             android:textSize="14sp"
             android:theme="@style/PrimaryEditText" />
 
@@ -259,7 +259,7 @@
             android:paddingEnd="8dp"
             android:singleLine="true"
             android:textColor="@color/font_dark"
-            android:textColorHint="@color/font_gray"
+            android:textColorHint="@color/font_gray_light"
             android:textSize="14sp"
             android:theme="@style/PrimaryEditText" />
 
@@ -276,7 +276,7 @@
             android:paddingEnd="8dp"
             android:singleLine="true"
             android:textColor="@color/font_dark"
-            android:textColorHint="@color/font_gray"
+            android:textColorHint="@color/font_gray_light"
             android:textSize="14sp"
             android:theme="@style/PrimaryEditText" />
     </LinearLayout>
