@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppThemeWhite" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="AppThemeGray" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/common_bg_gray</item>
+        <item name="colorPrimaryDark">@color/common_bg_gray</item>
+        <item name="colorAccent">@color/common_bg_gray</item>
+        <item name="android:windowBackground">@color/common_bg_gray</item>
+    </style>
+
+
+    <!--防止启动的时候白屏/黑屏，并且适配刘海屏-->
+    <style name="SplashThem" parent="status_bar_theme">
+        <item name="android:windowBackground">@drawable/start</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <!--透明状态栏-->
+    <style name="status_bar_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="PrimaryButton" parent="AppTheme">
+        <item name="buttonStyle">@style/Widget.AppCompat.Button</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryEditText" parent="AppTheme">
+        <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
+        <item name="editTextBackground">@drawable/abc_edit_text_material</item>
+        <item name="editTextColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="GrayButton" parent="AppTheme">
+        <item name="buttonStyle">@style/Widget.AppCompat.Button</item>
+        <item name="colorButtonNormal">@color/font_gray</item>
+    </style>
+</resources>

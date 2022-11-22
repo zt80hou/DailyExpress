@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="common_header_height">54dp</dimen>
+    <dimen name="common_header_font">17sp</dimen>
+    <dimen name="common_page_edge">13dp</dimen>
+    <dimen name="common_stroke">1dp</dimen> <!--默认线框宽度-->
+    <dimen name="common_radius">4dp</dimen> <!--默认线角度-->
+    <dimen name="common_btn_height">38dp</dimen> <!--长按钮高度,登录注册保存等-->
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="banner_height">120dp</dimen>
+
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <root-path
+        name="root"
+        path="" />
+    <files-path
+        name="files"
+        path="." />
+
+    <cache-path
+        name="cache"
+        path="." />
+
+    <external-path
+        name="external"
+        path="." />
+
+    <external-files-path
+        name="external_file_path"
+        path="." />
+    <external-cache-path
+        name="external_cache_path"
+        path="." />
+
+<!--
+    https://blog.csdn.net/lmj623565791/article/details/72859156
+
+    在paths节点内部支持以下几个子节点，分别为：
+
+    <root-path/> 代表设备的根目录new File("/");
+    <files-path/> 代表context.getFilesDir()
+    <cache-path/> 代表context.getCacheDir()
+    <external-path/> 代表Environment.getExternalStorageDirectory()
+    <external-files-path>代表context.getExternalFilesDirs()
+    <external-cache-path>代表getExternalCacheDirs()
+    每个节点都支持两个属性：
+
+    name
+    path
+    path即为代表目录下的子目录，比如：
+
+    <external-path
+        name="external"
+        path="pics" />
+  -->
+
+</paths>

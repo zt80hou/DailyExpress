@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4388fd</color>
+    <color name="colorPrimaryDark">#4388fd</color>
+    <color name="colorAccent">#4388fd</color>
+
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color> <!-- 透明色-->
+    <color name="transparent_70">#B3000000</color>  <!-- 透明色 70%-->
+    <color name="transparent_60">#99000000</color>  <!-- 透明色 60%-->
+    <color name="transparent_55">#8C000000</color>  <!-- 透明色 55%-->
+    <color name="transparent_50">#80000000</color>  <!-- 透明色 50%-->
+    <color name="transparent_40">#66000000</color>  <!-- 透明色 40%-->
+    <color name="transparent_30">#4D000000</color>  <!-- 透明色 30%-->
+    <color name="transparent_20">#33000000</color>  <!-- 透明色 20%-->
+    <color name="transparent_10">#1A000000</color>  <!-- 透明色 10%-->
+    <color name="transparent_05">#0D000000</color>  <!-- 透明色 5%-->
+    <drawable name="trans_20">#33000000</drawable>
+
+    <color name="trans_white_10">#1AFFFFFF</color>  <!-- 白色透明 10%-->
+    <color name="trans_white_20">#33FFFFFF</color>  <!-- 白色透明 20%-->
+    <color name="trans_white_40">#66FFFFFF</color>  <!-- 白色透明 40%-->
+    <color name="trans_white_50">#80FFFFFF</color>  <!-- 白色透明 50%-->
+    <color name="trans_white_70">#B3FFFFFF</color>  <!-- 白色透明 70%-->
+    <color name="trans_white_80">#CCFFFFFF</color>  <!-- 白色透明 80%-->
+    <color name="trans_white">#FFFFFFFF</color>  <!-- 白色透明 全透明-->
+
+
+    <color name="common_bg">#ffffff</color>
+    <color name="common_bg_gray">#F5F5F5</color>
+    <color name="common_header_font">#ff0d0e15</color>
+    <color name="common_line_margin_gray">#E7E7E7</color>
+    <color name="common_hint_gray">#cccccc</color>
+    <color name="common_bg_gray_middle">#F4F4F4</color>
+    <color name="common_bg_green_trans80">#331dbf2c</color>
+
+    <color name="line_gray">#e6e6e6</color>
+    <color name="font_dark">#555555</color>
+    <color name="font_brown">#1a1a1a</color>
+    <color name="font_yellow">#FFEAA1</color>
+    <color name="font_yellow_dark">#FFDA81</color>
+    <color name="font_gray_light">#bbbbbb</color>
+    <color name="font_gray">#999999</color>
+    <color name="font_gray_dark">#666666</color>
+
+    <color name="font_VIP">#fdb836</color>
+    <color name="font_VIP_dark">#E5905F</color>
+</resources>

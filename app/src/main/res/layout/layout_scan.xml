@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_margin="14dp"
+    android:id="@+id/layoutScan"
+    android:background="@drawable/shape_corner8_black"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape_square_gray_empty"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="摄像头扫码"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>
