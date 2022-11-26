@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="14dp"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_square_divider_empty"
+        android:divider="@drawable/shape_divider"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:showDividers="middle"
+        android:stretchColumns="1">
+
+
+        <TextView
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="包裹信息"
+            android:textColor="@color/font_brown"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:background="@color/common_bg_gray"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="条码："
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="xxxxxxxx"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:background="@color/common_bg_gray"
+
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="体积："
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="xxxxxxxx"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:background="@color/common_bg_gray"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="重量："
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="xxxxxxxx"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:background="@color/common_bg_gray"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="客户："
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="xxxxxxxx"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:background="@color/common_bg_gray"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="货架："
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:background="@color/white"
+                android:padding="8dp"
+                android:text="xxxxxxxx"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </TableRow>
+
+
+        <TextView
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="收件人"
+            android:textColor="@color/font_brown"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/common_bg_gray"
+            android:divider="@drawable/shape_divider"
+            android:gravity="center_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="张三 (收)"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1.6"
+                android:text="13288888888"
+                android:textColor="@color/font_brown"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:minLines="2"
+            android:padding="8dp"
+            android:text="朝阳区xx街道88号"
+            android:textColor="@color/font_brown"
+            android:textSize="16dp" />
+
+        <TextView
+            android:padding="8dp"
+            android:text="备注信息: 轻拿轻放"
+            android:textColor="@color/red"
+            android:textSize="16dp" />
+    </TableLayout>
+</LinearLayout>
+

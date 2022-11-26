@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:text="查看照片"
-            android:textColor="@color/Blue" />
+            android:textColor="@color/font_link_blue" />
 
     </LinearLayout>
 

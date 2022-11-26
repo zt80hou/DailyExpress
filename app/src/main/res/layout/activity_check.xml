@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_header" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_scan" />
+
+            <include layout="@layout/layout_input_goods_info" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="14dp">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_corner8_red"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvCommitModify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/icon_edit"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:text="提交修改"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:theme="@style/PrimaryButton" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_corner8_green"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvCommitOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableStart="@drawable/icon_ok"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:text="正常"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:theme="@style/PrimaryButton" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
+
+

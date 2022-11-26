@@ -45,4 +45,5 @@
 
     <color name="font_VIP">#fdb836</color>
     <color name="font_VIP_dark">#E5905F</color>
+    <color name="font_link_blue">#00b4f3</color>
 </resources>

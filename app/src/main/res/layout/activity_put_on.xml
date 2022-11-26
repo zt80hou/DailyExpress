@@ -6,95 +6,39 @@
 
     <include layout="@layout/layout_header" />
 
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content">
 
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="10dp"
-            android:text="架号"
-            android:textSize="17sp" />
-
-        <EditText
-            android:id="@+id/etGoodsShelvesNo"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_square_gray_empty"
-            android:hint="请输入架号或者扫码"
-            android:inputType="textVisiblePassword"
-            android:maxLength="40"
-            android:padding="4dp"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:id="@+id/ivScanGoodsShelvesNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
-            android:src="@drawable/icon_scan" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center_vertical">
+            android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="10dp"
-            android:text="货号"
-            android:textSize="17sp" />
+            <include layout="@layout/layout_scan" />
 
-        <EditText
-            android:id="@+id/etGoodsNo"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_square_gray_empty"
-            android:hint="请输入货号或者扫码"
-            android:imeOptions="actionNext"
-            android:inputType="textVisiblePassword"
-            android:maxLength="40"
-            android:padding="4dp"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            <include layout="@layout/layout_show_goods_info" />
 
-        <ImageView
-            android:id="@+id/ivScanOrderNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
-            android:src="@drawable/icon_scan" />
-
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnCommit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/shape_corner8_primary"
+                android:text="确认上架"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:theme="@style/PrimaryButton" />
 
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
-        android:background="@drawable/shape_square_gray_empty"
-        android:divider="@color/common_line_margin_gray"
-        android:dividerHeight="1px"
-        android:listSelector="@android:color/transparent"
-        android:scrollbars="none" />
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </LinearLayout>
-
-

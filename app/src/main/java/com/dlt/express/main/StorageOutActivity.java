@@ -17,11 +17,11 @@ import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 import com.hzlh.sdk.util.YToast;
 
 /**
- * 描述：入库
+ * 描述：出库
  * 作者：Zhout
  * 日期：2022/11/21 14:43
  */
-public class StorageInActivity extends AppActivity implements View.OnClickListener {
+public class StorageOutActivity extends AppActivity implements View.OnClickListener {
     private Context context = this;
     private LinearLayout layoutScan;
     private EditText etCode;
@@ -30,13 +30,13 @@ public class StorageInActivity extends AppActivity implements View.OnClickListen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_storage_in);
+        setContentView(R.layout.activity_storage_out);
         initView();
 
     }
 
     private void initView() {
-        initHeader("入库");
+        initHeader("出库");
 
         layoutScan = findViewById(R.id.layoutScan);
         etCode = findViewById(R.id.et_code);

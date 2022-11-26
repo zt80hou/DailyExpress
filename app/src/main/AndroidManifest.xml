@@ -45,7 +45,8 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
+        <!--对扫码页面进行声明-->
+        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
         <activity
             android:name="com.dlt.express.StartActivity"
             android:screenOrientation="portrait"
@@ -81,9 +82,19 @@
         <activity
             android:name=".main.StorageInActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".main.CheckActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".main.StorageOutActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".main.EnrollActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".main.DispatchActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
-        <!--对扫码页面进行声明-->
-        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
 
         <!-- Android 7.0 FileProvider适配 -->
         <provider
@@ -95,6 +106,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
 
     </application>
 

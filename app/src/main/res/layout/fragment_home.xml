@@ -53,7 +53,7 @@
                 <ImageView
                     android:layout_width="66dp"
                     android:layout_height="66dp"
-                    android:src="@drawable/icon_scan" />
+                    android:src="@drawable/icon_storage_in" />
 
 
                 <LinearLayout
@@ -66,7 +66,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="入仓"
+                        android:text="入库"
                         android:textColor="@color/font_brown"
                         android:textSize="18sp" />
 
@@ -109,7 +109,7 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_put_on" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -143,7 +143,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/layout_pd"
+                        android:id="@+id/layout_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical">
@@ -151,7 +151,7 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_check" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_put_off" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -246,7 +246,7 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_storage_out" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -282,6 +282,7 @@
                 android:gravity="center">
 
                 <LinearLayout
+                    android:id="@+id/layout_enroll"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="7dp"
@@ -299,14 +300,14 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_enroll" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:gravity="center"
-                            android:text="其他"
+                            android:text="卸货\n登记"
                             android:textColor="@color/font_brown"
                             android:textSize="17sp" />
                     </LinearLayout>
@@ -324,6 +325,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/layout_dispatch"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="7dp"
@@ -340,14 +342,14 @@
                         <ImageView
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/icon_scan" />
+                            android:src="@drawable/icon_dispatch" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:gravity="center"
-                            android:text="其他"
+                            android:text="开始\n派单"
                             android:textColor="@color/font_brown"
                             android:textSize="17sp" />
                     </LinearLayout>

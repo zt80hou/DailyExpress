@@ -31,7 +31,6 @@ import java.util.List;
 
 public class MainActivity extends AppActivity {
     private Context context = this;
-    private TabsPagerAdapter fragmentAdapter;
     private List<String> tabTitles = new ArrayList<>();
     private List<Fragment> fragments = new ArrayList<>();
     private ViewPager viewPager;
@@ -81,7 +80,7 @@ public class MainActivity extends AppActivity {
             }
         });
 
-        fragmentAdapter = new TabsPagerAdapter(getSupportFragmentManager(), tabTitles, fragments);
+        TabsPagerAdapter fragmentAdapter = new TabsPagerAdapter(getSupportFragmentManager(), tabTitles, fragments);
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(fragmentAdapter);
 
