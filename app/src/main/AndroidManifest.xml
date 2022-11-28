@@ -4,19 +4,24 @@
     package="com.dlt.express">
 
     <!-- 网络请求 -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 写入存储卡 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读取存储卡 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 写入存储卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取存储卡 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  <!-- 网络状态 -->
-    <uses-permission android:name="android.permission.CAMERA" />  <!-- 多媒体相关 拍照修改头像 -->
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />  <!-- 杀死进程 退出App -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- android8.0版本更新跳转安装页面 -->
-
+    <!-- 杀死进程 退出App -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!-- android8.0版本更新跳转安装页面 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 粗略定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 精准定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!--相机权限-->
     <uses-permission android:name="android.permission.CAMERA" />
     <!--读文件权限-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--使用特性-->
+    <!--华为扫一扫使用特性-->
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -31,22 +36,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeWhite"
         android:usesCleartextTraffic="true"
-
         tools:replace="android:allowBackup">
+
         <!-- 全面屏适配 https://dev.mi.com/console/doc/detail?pid=1160 -->
         <meta-data
             android:name="android.max_aspect"
             android:value="2.4" />
+
         <!--适配华为（huawei）刘海屏-->
         <meta-data
             android:name="android.notch_support"
             android:value="true" />
+
         <!-- 明确引用org.apache.http.legacy库，避免QQ官方open sdk在Android 9上报错 -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
         <!--对扫码页面进行声明-->
         <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
+
         <activity
             android:name="com.dlt.express.StartActivity"
             android:screenOrientation="portrait"
@@ -107,6 +116,11 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <!-- 高德地图KEY -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="de6b161b712c7786eacd8a99d48aff85"
+            tools:replace="android:value" />
 
     </application>
 
