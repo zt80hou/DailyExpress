@@ -30,23 +30,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="14dp"
-                android:text="账号"
+                android:layout_marginEnd="8dp"
+                android:text="账号："
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/editAccount"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_square_gray_empty"
                 android:hint="请输入账号"
                 android:inputType="textVisiblePassword"
                 android:maxLength="20"
-                android:padding="4dp"
+                android:padding="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="4dp"
                 android:singleLine="true"
-                android:textColor="@color/black"
+                android:textColor="@color/font_brown"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -62,23 +63,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="14dp"
-                android:text="密码"
+                android:layout_marginEnd="8dp"
+                android:text="密码："
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/editPwd"
                 android:layout_width="0dp"
-                android:layout_height="44dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_square_gray_empty"
                 android:hint="请输入密码"
                 android:inputType="textPassword"
                 android:maxLength="20"
                 android:padding="4dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
                 android:singleLine="true"
-                android:textColor="@color/black"
+                android:textColor="@color/font_brown"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -95,11 +97,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
+                android:layout_marginBottom="14dp"
                 android:background="@drawable/shape_corner8_primary"
                 android:text="登录"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:theme="@style/PrimaryButton" />
+
 
             <Button
                 android:id="@+id/btnRegister"
@@ -122,7 +126,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="14dp"
             android:orientation="horizontal">
 
             <CheckBox
@@ -135,7 +138,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tvPrivate"
+                android:id="@+id/tvPrivacy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="《隐私政策》"

@@ -2,30 +2,65 @@ package com.dlt.express.base;
 
 import android.content.Context;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.dlt.express.BuildConfig;
+import com.dlt.express.Constants;
 import com.hzlh.sdk.net.CallBack;
 import com.hzlh.sdk.net.YFile;
 import com.hzlh.sdk.net.YRequest;
 import com.hzlh.sdk.util.YLog;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+
+import okhttp3.Request;
 
 
 /**
  * 请求类
- * Created by 夏吧吧 on 2020/4/10.
  */
 public class MRequest extends YRequest {
-    public static Gson gson = new GsonBuilder().serializeNulls().excludeFieldsWithoutExposeAnnotation().disableHtmlEscaping().create();
+    private static MRequest mInstance;
+    private static HashMap<String, String> headerMap = new HashMap<>();
+    private final String TAG = "MRequest";
+
 
     public static MRequest getInstance() {
         if (okHttpClient != null && (long) okHttpClient.readTimeoutMillis() != 60L) {
             setTimeOut(60L);// 1分钟
         }
+        if (mInstance == null) {
+            mInstance = new MRequest();
+        }
+        headerMap.clear();
+        // 统一加上header
+        if (Constants.loginBean != null && Constants.loginBean.getData() != null) {
+            // Bearer Token认证
+            headerMap.put("Authorization", Constants.loginBean.getData().getTokenType() + " " + Constants.loginBean.getData().getAccessToken());
+            headerMap.put("version", BuildConfig.VERSION_NAME);
+            headerMap.put("plateForm", "Android App");
+        }
+        return mInstance;
+    }
 
-        return MRequest.Loader.instance;
+    public MRequest addHeader(String key, String value) {
+        headerMap.put(key, value);
+        return mInstance;
+    }
+
+    @Override
+    protected Request addHeaders(Request request) {
+        Iterator iterator = headerMap.entrySet().iterator();
+        Request.Builder request1 = request.newBuilder();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            if (entry.getValue() != null) {
+                request1.addHeader(entry.getKey().toString(), String.valueOf(entry.getValue())).build();
+                YLog.d(TAG, "header = " + entry.getKey().toString() + " : " + entry.getValue());
+            }
+        }
+        return request1.build();
     }
 
     @Override
@@ -35,14 +70,8 @@ public class MRequest extends YRequest {
         } else if (!"SUCCESS".equals(((AppBaseBean) object).getStatus())) {
             handler.onNull();
             handler.onResultError(object);
-//            YLog.e("YRequest error ", "response=" + handler.getUrl() + " " + this.gson.toJson(object));
         } else {
             handler.onResultOk(object);
-//            if (handler.isDefault()) {
-//                YLog.v("YRequestVLog", "response=" + handler.getUrl() + " " + this.gson.toJson(object));
-//            } else {
-//                YLog.i("YRequest", "response=" + handler.getUrl() + " " + this.gson.toJson(object));
-//            }
         }
     }
 
@@ -50,9 +79,9 @@ public class MRequest extends YRequest {
     protected void handleResultJson(Context context, String resp, CallBack handler) {
         super.handleResultJson(context, resp, handler);
         if (resp.contains("SUCCESS")) {
-            YLog.i("YRequest", "response resp =" + handler.getUrl() + " " + resp);
+            YLog.i(TAG, "response resp =" + handler.getUrl() + " " + resp);
         } else {
-            YLog.e("YRequest", "response resp =" + handler.getUrl() + " " + resp);
+            YLog.e(TAG, "response resp =" + handler.getUrl() + " " + resp);
         }
 
     }
@@ -66,20 +95,14 @@ public class MRequest extends YRequest {
                 buffer.append(", ");
             }
         }
-        YLog.i("YRequest", "postFile = " + url + ",  fileList = " + buffer.toString());
+        YLog.i(TAG, "postFile = " + url + ",  fileList = " + buffer.toString());
         super.postFile(context, url, _class, map, fileList, handler);
     }
 
     @Override
     public void postJson(Context context, String url, String json, Class<?> _class, CallBack handler) {
-        YLog.i("YRequest", "postJson = " + url + ",  json = " + json);
+        YLog.i(TAG, "postJson = " + url + ",  json = " + json);
         super.postJson(context, url, json, _class, handler);
     }
 
-    static class Loader {
-        private static final MRequest instance = new MRequest();
-
-        Loader() {
-        }
-    }
 }

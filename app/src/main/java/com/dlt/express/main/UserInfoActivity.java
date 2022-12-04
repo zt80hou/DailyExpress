@@ -8,13 +8,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dlt.express.Constants;
+import com.dlt.express.R;
 import com.dlt.express.api.UserApi;
 import com.dlt.express.base.AppActivity;
 import com.dlt.express.base.AppBaseBean;
 import com.dlt.express.base.AppCallBack;
+import com.dlt.express.module.user.LoginEvent;
 import com.hzlh.sdk.util.SPUtils;
 import com.hzlh.sdk.util.YToast;
-import com.dlt.express.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * 描述：用户信息
@@ -49,11 +52,19 @@ public class UserInfoActivity extends AppActivity {
             }
         });
 
-        tvNickName.setText(Constants.loginBean.getData().getUserInfo().getNickName());
-        tvRealName.setText(Constants.loginBean.getData().getUserInfo().getRealName());
-        tvSex.setText(Constants.loginBean.getData().getUserInfo().getSex().getText());
-        tvPhone.setText(Constants.loginBean.getData().getUserInfo().getPhoneNumber());
-
+        tvNickName.setText(Constants.getUserInfo().getUsername());
+        tvRealName.setText(Constants.getUserInfo().getRealName());
+        String sex = Constants.getUserInfo().getSex();
+        String sexText;
+        if ("X".equals(sex)) {
+            sexText = "男";
+        } else if ("Y".equals(sex)) {
+            sexText = "女";
+        } else {
+            sexText = "未知";
+        }
+        tvSex.setText(sexText);
+        tvPhone.setText(Constants.getUserInfo().getPhoneNumber());
 
     }
 
@@ -64,7 +75,11 @@ public class UserInfoActivity extends AppActivity {
                 super.onResultOk(result);
                 YToast.shortToast(context, "退出登录成功！");
                 Constants.loginBean = null;
+                Constants.userInfoBean = null;
                 SPUtils.getInstance(context).putString(Constants.SP_KEY_LOGIN_PWD, "");
+                LoginEvent event = new LoginEvent();
+                event.setLogin(false);
+                EventBus.getDefault().post(event);
                 finish();
             }
 

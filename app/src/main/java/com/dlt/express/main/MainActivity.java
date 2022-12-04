@@ -87,7 +87,6 @@ public class MainActivity extends AppActivity {
         startRefreshTimer();
     }
 
-
     private void initTabs(int pos) {
         switch (pos) {
             case 0:
@@ -119,7 +118,6 @@ public class MainActivity extends AppActivity {
      * 刷新token
      */
     private void refreshToken() {
-        YLog.e("Constants.isLogin() = " + Constants.isLogin());
         if (Constants.isLogin()) {
             String account = SPUtils.getInstance(this).getString(Constants.SP_KEY_LOGIN_ACCOUNT);
             String pwd = SPUtils.getInstance(this).getString(Constants.SP_KEY_LOGIN_PWD);
@@ -142,7 +140,7 @@ public class MainActivity extends AppActivity {
         CountDownTimer timer = new CountDownTimer(refreshEndTime, 1000) {
             @Override
             public void onTick(long l) {
-                YLog.d("刷新token倒计时剩余：" + l / 1000 + "秒");
+//                YLog.d("刷新token倒计时剩余：" + l / 1000 + "秒");
             }
 
             @Override

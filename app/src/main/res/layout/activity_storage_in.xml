@@ -36,7 +36,8 @@
                     android:layout_marginRight="14dp"
                     android:layout_marginBottom="14dp"
                     android:text="该包裹已经入库，请勿重复操作"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/red"
+                    android:visibility="gone" />
 
                 <Button
                     android:id="@+id/btnCommit"

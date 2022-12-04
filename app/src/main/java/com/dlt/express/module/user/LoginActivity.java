@@ -9,18 +9,20 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dlt.express.Constants;
-import com.dlt.express.main.MainActivity;
-import com.dlt.express.api.UserApi;
+import com.dlt.express.R;
 import com.dlt.express.api.LoginBean;
+import com.dlt.express.api.UserApi;
+import com.dlt.express.api.UserInfoBean;
 import com.dlt.express.base.AppActivity;
 import com.dlt.express.base.AppCallBack;
 import com.dlt.express.util.ImmersiveUtil;
 import com.dlt.express.util.InputMethodUtils;
+import com.dlt.express.util.JumpUtil;
 import com.hzlh.sdk.util.SPUtils;
 import com.hzlh.sdk.util.YToast;
-import com.dlt.express.R;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -43,7 +45,11 @@ public class LoginActivity extends AppActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ImmersiveUtil.modifyStatusBarTextColor(this, true);
+
         editAccount = findViewById(R.id.editAccount);
+        account = SPUtils.getInstance(context).getString(Constants.SP_KEY_LOGIN_ACCOUNT);
+        editAccount.setText(account);
+
         editAccount.requestFocus();
         checkbox = findViewById(R.id.checkbox);
         checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -69,6 +75,21 @@ public class LoginActivity extends AppActivity {
                 if (checkParams()) {
                     gotoLogin();
                 }
+            }
+        });
+
+        TextView tvPrivacy = findViewById(R.id.tvPrivacy);
+        TextView tvAgreement = findViewById(R.id.tvAgreement);
+        tvPrivacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JumpUtil.jumpPrivacyPolice(context);
+            }
+        });
+        tvAgreement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JumpUtil.jumpUserAgreement(context);
             }
         });
 
@@ -102,18 +123,30 @@ public class LoginActivity extends AppActivity {
                 Constants.loginBean = result;
                 SPUtils.getInstance(context).putString(Constants.SP_KEY_LOGIN_ACCOUNT, account);
                 SPUtils.getInstance(context).putString(Constants.SP_KEY_LOGIN_PWD, pwd);
-                startActivity(MainActivity.class);
 
-                LoginEvent event = new LoginEvent();
-                event.setLogin(true);
-                EventBus.getDefault().post(event);
-                finish();
+                getUserInfo();
             }
 
             @Override
-            public void onResultError(LoginBean result) {
-                super.onResultError(result);
-                YToast.shortToast(context, result.getMsg());
+            public void onNull() {
+                super.onNull();
+                YToast.shortToast(context, "登录失败，请重试！");
+            }
+        });
+    }
+
+
+    private void getUserInfo() {
+        new UserApi().getUserInfo(context, new AppCallBack<UserInfoBean>(context) {
+            @Override
+            public void onResultOk(UserInfoBean result) {
+                super.onResultOk(result);
+                Constants.userInfoBean = result;
+                LoginEvent event = new LoginEvent();
+                event.setLogin(true);
+                EventBus.getDefault().post(event);
+
+                finish();
             }
 
             @Override

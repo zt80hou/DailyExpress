@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"
+    android:gravity="center_vertical"
+    android:textColor="@color/font_dark"
+    android:textSize="14sp"
+    tools:text="一般货物">
+
+</TextView>

@@ -25,11 +25,13 @@
             android:src="@drawable/icon_user_head" />
 
         <TextView
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
             android:id="@+id/tvNickName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
             android:text="登录"
             android:textColor="@color/font_brown"
             android:textSize="18sp"
@@ -41,9 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="6dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
@@ -109,6 +111,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/llUserInfo"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:gravity="center_vertical"
@@ -138,6 +141,7 @@
                 android:background="@color/line_gray" />
 
             <LinearLayout
+                android:id="@+id/llAboutUs"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:gravity="center_vertical"
@@ -169,6 +173,7 @@
 
 
             <LinearLayout
+                android:id="@+id/llCustomerService"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:gravity="center_vertical"
@@ -181,7 +186,7 @@
                     android:layout_weight="1"
                     android:drawableStart="@drawable/icon_servicer"
                     android:drawablePadding="10dp"
-                    android:text="联系客服"
+                    android:text="客户服务"
                     android:textColor="@color/font_dark"
                     android:textSize="16sp" />
 
@@ -198,6 +203,7 @@
                 android:background="@color/line_gray" />
 
             <LinearLayout
+                android:id="@+id/llPrivacyPolice"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:gravity="center_vertical"
@@ -228,6 +234,7 @@
                 android:background="@color/line_gray" />
 
             <LinearLayout
+                android:id="@+id/llUserAgreement"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:gravity="center_vertical"

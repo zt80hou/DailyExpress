@@ -6,6 +6,7 @@ import com.dlt.express.Constants;
 import com.dlt.express.base.AppBaseBean;
 import com.dlt.express.base.AppCallBack;
 import com.dlt.express.base.MRequest;
+import com.dlt.express.util.JsonUtil;
 import com.hzlh.sdk.net.HttpMap;
 
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class UserApi {
      * @param password 密码
      * @param callBack
      */
-    public void login(final Context context, final String account, final String password, AppCallBack<LoginBean> callBack) {
+    public void login( Context context,  String account,  String password, AppCallBack<LoginBean> callBack) {
         HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
             public void addParams(HashMap<String, String> map) {
                 map.put("principal", account);
@@ -33,9 +34,23 @@ public class UserApi {
         });
 
         String url = Constants.baseAddr + "/auth/login";
-        String json = MRequest.gson.toJson(map);
+        String json = JsonUtil.toJson(map);
         MRequest.getInstance().postJson(context, url, json, LoginBean.class, callBack);
     }
+
+    /**
+     * 获取用户信息
+     *
+     * @param context
+     * @param callBack
+     */
+    public void getUserInfo( Context context, AppCallBack<UserInfoBean> callBack) {
+        HashMap<String, String> map = HttpMap.getMap();
+
+        String url = Constants.baseAddr + "/user/get/currUser/info";
+        MRequest.getInstance().post(context, url, UserInfoBean.class, map, callBack);
+    }
+
 
     /**
      * 退出登录
@@ -43,13 +58,13 @@ public class UserApi {
      * @param context
      * @param callBack
      */
-    public void logout(final Context context, AppCallBack<AppBaseBean> callBack) {
+    public void logout( Context context, AppCallBack<AppBaseBean> callBack) {
         HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
             public void addParams(HashMap<String, String> map) {
             }
         });
 
-        String json = MRequest.gson.toJson(map);
+        String json = JsonUtil.toJson(map);
         String url = Constants.baseAddr + "/auth/logout";
         MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
     }

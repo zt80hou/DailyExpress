@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.dlt.express.Constants;
 import com.dlt.express.R;
 import com.dlt.express.base.AppFragment;
 import com.dlt.express.main.CheckActivity;
@@ -18,8 +20,8 @@ import com.dlt.express.main.PutOffActivity;
 import com.dlt.express.main.PutOnActivity;
 import com.dlt.express.main.StorageInActivity;
 import com.dlt.express.main.StorageOutActivity;
+import com.dlt.express.util.JumpUtil;
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * 描述：首页
@@ -38,7 +40,7 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
 
 
     @Override
-    public void onAttach(@NotNull Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         this.context = context;
     }
@@ -69,21 +71,27 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == layoutIn) {//入库
-            startActivity(StorageInActivity.class);
-        } else if (view == layoutOn) {//上架
-            startActivity(PutOnActivity.class);
-        } else if (view == layoutCheck) {//盘点
-            startActivity(CheckActivity.class);
-        } else if (view == layoutOff) {//下架
-            startActivity(PutOffActivity.class);
-        } else if (view == layoutOut) {//出库
-            startActivity(StorageOutActivity.class);
-        } else if (view == layoutEnroll) {//卸货登记
-            startActivity(EnrollActivity.class);
-        } else if (view == layoutDispatch) {//开始派单
-            startActivity(DispatchActivity.class);
+        if (!Constants.isLogin()) {
+            JumpUtil.jumpLogin(context);
+        } else {
+            if (view == layoutIn) {//入库
+                startActivity(StorageInActivity.class);
+            } else if (view == layoutOn) {//上架
+                startActivity(PutOnActivity.class);
+            } else if (view == layoutCheck) {//盘点
+                startActivity(CheckActivity.class);
+            } else if (view == layoutOff) {//下架
+                startActivity(PutOffActivity.class);
+            } else if (view == layoutOut) {//出库
+                startActivity(StorageOutActivity.class);
+            } else if (view == layoutEnroll) {//卸货登记
+                startActivity(EnrollActivity.class);
+            } else if (view == layoutDispatch) {//开始派单
+                startActivity(DispatchActivity.class);
+            }
         }
+
+
     }
 
 }

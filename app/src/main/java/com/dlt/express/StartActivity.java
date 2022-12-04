@@ -8,13 +8,12 @@ import android.view.WindowManager;
 
 import com.dlt.express.api.LoginBean;
 import com.dlt.express.api.UserApi;
+import com.dlt.express.api.UserInfoBean;
 import com.dlt.express.base.AppActivity;
 import com.dlt.express.base.AppCallBack;
 import com.dlt.express.main.MainActivity;
-import com.dlt.express.module.user.LoginActivity;
 import com.hzlh.sdk.util.SPUtils;
 import com.hzlh.sdk.util.YLog;
-import com.dlt.express.R;
 
 /**
  * 描述：启动页
@@ -34,12 +33,12 @@ public class StartActivity extends AppActivity {
 
         String account = SPUtils.getInstance(this).getString(Constants.SP_KEY_LOGIN_ACCOUNT);
         String pwd = SPUtils.getInstance(this).getString(Constants.SP_KEY_LOGIN_PWD);
-        jumpToMain();
-//        if (!TextUtils.isEmpty(account) && !TextUtils.isEmpty(pwd)) {
-//            autoLogin(account, pwd);
-//        } else {
-//            jumpToLogin();
-//        }
+
+        if (!TextUtils.isEmpty(account) && !TextUtils.isEmpty(pwd)) {
+            autoLogin(account, pwd);
+        } else {
+            jumpToMain();
+        }
     }
 
     private void autoLogin(String account, String pwd) {
@@ -51,24 +50,38 @@ public class StartActivity extends AppActivity {
                 Constants.loginBean = result;
                 SPUtils.getInstance(context).putString(Constants.SP_KEY_LOGIN_ACCOUNT, account);
                 SPUtils.getInstance(context).putString(Constants.SP_KEY_LOGIN_PWD, pwd);
+
+                getUserInfo();
+            }
+
+            @Override
+            public void onNull() {
+                super.onNull();
+                jumpToMain();
+            }
+        });
+    }
+
+    private void getUserInfo() {
+        new UserApi().getUserInfo(context, new AppCallBack<UserInfoBean>(context) {
+            @Override
+            public void onResultOk(UserInfoBean result) {
+                super.onResultOk(result);
+                Constants.userInfoBean = result;
                 jumpToMain();
             }
 
             @Override
             public void onNull() {
                 super.onNull();
-                jumpToLogin();
+                jumpToMain();
             }
         });
     }
 
-    private void jumpToMain(){
+    private void jumpToMain() {
         startActivity(MainActivity.class);
         finish();
     }
 
-    private void jumpToLogin(){
-        startActivity(LoginActivity.class);
-        finish();
-    }
 }

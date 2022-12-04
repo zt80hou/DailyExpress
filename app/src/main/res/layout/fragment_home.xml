@@ -66,7 +66,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="入库"
+                        android:text="收单入库"
                         android:textColor="@color/font_brown"
                         android:textSize="18sp" />
 
@@ -132,64 +132,11 @@
 
                 </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/shape_corner8_white"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/layout_check"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:src="@drawable/icon_check" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
-                            android:gravity="center"
-                            android:text="盘点"
-                            android:textColor="@color/font_brown"
-                            android:textSize="17sp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Bar code scanning"
-                        android:textColor="@color/font_dark"
-                        android:textSize="16sp" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="118dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp"
-                android:gravity="center">
-
                 <LinearLayout
                     android:id="@+id/layout_off"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="7dp"
+                    android:layout_marginStart="7dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_corner8_white"
                     android:gravity="center"
@@ -228,11 +175,22 @@
                 </LinearLayout>
 
 
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:gravity="center">
+
                 <LinearLayout
                     android:id="@+id/layout_out"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_corner8_white"
                     android:gravity="center"
@@ -253,7 +211,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:gravity="center"
-                            android:text="出库"
+                            android:text="装车\n出库"
                             android:textColor="@color/font_brown"
                             android:textSize="17sp" />
                     </LinearLayout>
@@ -269,23 +227,11 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="118dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginBottom="14dp"
-                android:gravity="center">
-
                 <LinearLayout
                     android:id="@+id/layout_enroll"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="7dp"
+                    android:layout_marginStart="7dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_corner8_white"
                     android:gravity="center"
@@ -324,11 +270,23 @@
                 </LinearLayout>
 
 
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="14dp"
+                android:gravity="center">
+
                 <LinearLayout
                     android:id="@+id/layout_dispatch"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_corner8_white"
                     android:gravity="center"
@@ -364,6 +322,48 @@
 
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_corner8_white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layout_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/icon_check" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:gravity="center"
+                            android:text="运单\n查询"
+                            android:textColor="@color/font_brown"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Bar code scanning"
+                        android:textColor="@color/font_dark"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

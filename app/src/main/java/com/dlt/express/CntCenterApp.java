@@ -10,8 +10,6 @@ import android.text.TextUtils;
 
 import androidx.multidex.MultiDex;
 
-import com.hzlh.sdk.BuildConfig;
-import com.hzlh.sdk.constant.Screen;
 import com.hzlh.sdk.ui.BaseApp;
 import com.hzlh.sdk.util.YLog;
 
@@ -79,13 +77,6 @@ public class CntCenterApp extends BaseApp {
 
     private void initApplication() {
         closeAndroidPDialog();
-
-
-        YLog.e("screen==" + Screen.density);
-        YLog.e("screen==" + Screen.densityDpi);
-        YLog.e("screen==" + Screen.width);
-        YLog.e("screen==" + Screen.height);
-
     }
 
     @Override
@@ -177,14 +168,7 @@ public class CntCenterApp extends BaseApp {
 
     @Override
     public HashMap<String, String> getHeaderMap() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("version", BuildConfig.VERSION_NAME);
-        if (Constants.loginBean != null && Constants.loginBean.getData() != null) {
-            // Bearer Token认证
-            map.put("Authorization", Constants.loginBean.getData().getTokenType() + " " + Constants.loginBean.getData().getAccessToken());
-        }
-        YLog.d("headers = " + map.toString());
-        return map;
+        return new HashMap<>();
     }
 
 }

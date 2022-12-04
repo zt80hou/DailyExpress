@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">天天集运</string>
+
+    <string-array name="goodsTypeNames">
+        <item>"一般货物"</item>
+        <item>"3C产品"</item>
+        <item>"纸箱纸板"</item>
+        <item>"金属钢材"</item>
+        <item>"精密仪器"</item>
+        <item>"陶瓷玻璃"</item>
+        <item>"水产生鲜"</item>
+        <item>"蔬菜水果"</item>
+        <item>"其它分类"</item>
+    </string-array>
+
+    <string-array name="goodsTypeValues">
+        <item>"DEFAULT"</item>
+        <item>"CCC_PRODUCTS"</item>
+        <item>"PAPER_CARTON"</item>
+        <item>"METAL_STEEL"</item>
+        <item>"PRECISION_INSTRUMENT"</item>
+        <item>"CERAMIC_GLASS"</item>
+        <item>"FRESH_AQUATIC"</item>
+        <item>"VEGETABLES_FRUITS"</item>
+        <item>"OTHER"</item>
+    </string-array>
+
+
 </resources>
