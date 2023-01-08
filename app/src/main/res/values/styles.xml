@@ -41,6 +41,13 @@
         <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 
+    <style name="PrimaryCheckBox" parent="AppTheme">
+        <item name="checkboxStyle">@style/Widget.AppCompat.CompoundButton.CheckBox</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+
     <style name="PrimaryEditText" parent="AppTheme">
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>

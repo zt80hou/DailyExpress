@@ -7,9 +7,13 @@
     <include layout="@layout/layout_header" />
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,39 +21,18 @@
             android:orientation="vertical">
 
 
-            <include layout="@layout/layout_scan" />
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:text="*"
-                    android:textColor="@color/red" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="运输条码号："
-                    android:textColor="@color/font_brown"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
+                android:text="车牌号："
+                android:textColor="@color/font_brown"
+                android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/et_code"
+                android:id="@+id/etCarNo"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="14dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/shape_corner8_gray_stroke"
                 android:gravity="center_vertical"
@@ -61,26 +44,115 @@
                 android:textSize="14sp"
                 android:theme="@style/PrimaryEditText" />
 
-            <include layout="@layout/layout_show_goods_info" />
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/btnCommit"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="班次："
+            android:textColor="@color/font_brown"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="早班"
+                android:theme="@style/PrimaryCheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkbox_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="午班"
+                android:theme="@style/PrimaryCheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkbox_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="晚班"
+                android:theme="@style/PrimaryCheckBox" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="运单号："
+            android:textColor="@color/font_brown"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/etExpressNo"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="14dp"
-                android:layout_marginBottom="14dp"
-                android:background="@drawable/shape_corner8_primary"
-                android:text="确认出库"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:theme="@style/PrimaryButton" />
+                android:layout_height="36dp"
+                android:background="@drawable/shape_corner8_gray_stroke"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="48dp"
+                android:singleLine="true"
+                android:textColor="@color/font_dark"
+                android:textColorHint="@color/font_gray"
+                android:textSize="14sp"
+                android:theme="@style/PrimaryEditText" />
 
+            <ImageView
+                android:id="@+id/ivScanExpressNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@drawable/icon_scan" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="已出库列表："
+                android:textColor="@color/font_brown"
+                android:textSize="16sp" />
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
 
         </LinearLayout>
 
+    </LinearLayout>
 
-    </ScrollView>
 
 </LinearLayout>

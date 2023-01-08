@@ -28,6 +28,18 @@ public class DateUtil {
     }
 
     /**
+     * 获取现在时间 小时
+     *
+     * @return
+     */
+    public static String getCurrentHour() {
+        Date c = new Date();
+        DateFormat formatter = new SimpleDateFormat("HH", Locale.getDefault());
+        return formatter.format(c);
+    }
+
+
+    /**
      * 字符串转时间
      *
      * @param timeString

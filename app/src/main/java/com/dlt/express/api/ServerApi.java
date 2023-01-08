@@ -129,4 +129,26 @@ public class ServerApi {
     }
 
 
+    /**
+     * 装车出库
+     *
+     * @param context
+     * @param callBack
+     */
+    public void storageOut(Context context, String truckNo, String batchNo, String expressNo, AppCallBack<AppBaseBean> callBack) {
+        String url = Constants.baseAddr + "/memberOrder/entruck";
+        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
+            @Override
+            public void addParams(HashMap<String, String> hashMap) {
+                hashMap.put("truckNo", truckNo);
+                hashMap.put("batchNo", batchNo);
+                hashMap.put("expressNo", expressNo);
+            }
+        });
+
+        String json = JsonUtil.toJson(map);
+        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
+    }
+
+
 }
