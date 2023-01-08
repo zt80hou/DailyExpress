@@ -177,7 +177,6 @@ public class StorageOutActivity extends AppActivity implements View.OnClickListe
                         layoutList.setVisibility(View.VISIBLE);
                         expressOrderList.add(etExpressNo.getText().toString().trim());
                         adapter.notifyDataSetChanged();
-                        etExpressNo.setText("");
                     }
 
                     @Override

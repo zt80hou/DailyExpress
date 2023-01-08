@@ -108,6 +108,9 @@
         <activity android:name=".module.web.WebActivity" />
         <activity android:name=".main.CustomerListActivity" />
         <activity android:name=".main.AddressListActivity" />
+        <activity
+            android:name=".main.SendOkActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
 
         <!-- Android 7.0 FileProvider适配 -->

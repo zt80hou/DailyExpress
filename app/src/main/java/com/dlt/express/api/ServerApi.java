@@ -151,4 +151,44 @@ public class ServerApi {
     }
 
 
+    /**
+     * 卸车登记
+     *
+     * @param context
+     * @param callBack
+     */
+    public void unload(Context context, String truckNo, String expressNo, AppCallBack<AppBaseBean> callBack) {
+        String url = Constants.baseAddr + "/memberOrder/unload";
+        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
+            @Override
+            public void addParams(HashMap<String, String> hashMap) {
+                hashMap.put("truckNo", truckNo);
+                hashMap.put("expressNo", expressNo);
+            }
+        });
+
+        String json = JsonUtil.toJson(map);
+        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
+    }
+
+    /**
+     * 送达登记
+     *
+     * @param context
+     * @param callBack
+     */
+    public void arrived(Context context, String expressNo, AppCallBack<AppBaseBean> callBack) {
+        String url = Constants.baseAddr + "/memberOrder/arrived";
+        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
+            @Override
+            public void addParams(HashMap<String, String> hashMap) {
+                hashMap.put("expressNo", expressNo);
+            }
+        });
+
+        String json = JsonUtil.toJson(map);
+        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
+    }
+
+
 }

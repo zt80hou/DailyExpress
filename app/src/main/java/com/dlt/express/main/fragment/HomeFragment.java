@@ -14,10 +14,10 @@ import com.dlt.express.Constants;
 import com.dlt.express.R;
 import com.dlt.express.base.AppFragment;
 import com.dlt.express.main.CheckActivity;
-import com.dlt.express.main.DispatchActivity;
 import com.dlt.express.main.EnrollActivity;
 import com.dlt.express.main.PutOffActivity;
 import com.dlt.express.main.PutOnActivity;
+import com.dlt.express.main.SendOkActivity;
 import com.dlt.express.main.StorageInActivity;
 import com.dlt.express.main.StorageOutActivity;
 import com.dlt.express.util.JumpUtil;
@@ -37,6 +37,7 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
     private LinearLayout layoutOut;
     private LinearLayout layoutEnroll;
     private LinearLayout layoutDispatch;
+    private LinearLayout layoutSend;
 
 
     @Override
@@ -56,6 +57,7 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
         layoutOut = view.findViewById(R.id.layout_out);
         layoutEnroll = view.findViewById(R.id.layout_enroll);
         layoutDispatch = view.findViewById(R.id.layout_dispatch);
+        layoutSend = view.findViewById(R.id.layout_send);
 
 
         layoutIn.setOnClickListener(this);
@@ -65,6 +67,7 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
         layoutOut.setOnClickListener(this);
         layoutEnroll.setOnClickListener(this);
         layoutDispatch.setOnClickListener(this);
+        layoutSend.setOnClickListener(this);
 
         return view;
     }
@@ -86,8 +89,8 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
                 startActivity(StorageOutActivity.class);
             } else if (view == layoutEnroll) {//卸货登记
                 startActivity(EnrollActivity.class);
-            } else if (view == layoutDispatch) {//开始派单
-                startActivity(DispatchActivity.class);
+            } else if (view == layoutSend) {//送达登记
+                startActivity(SendOkActivity.class);
             }
         }
 

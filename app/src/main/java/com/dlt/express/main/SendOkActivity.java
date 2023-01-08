@@ -3,12 +3,9 @@ package com.dlt.express.main;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.dlt.express.R;
 import com.dlt.express.api.ServerApi;
@@ -22,54 +19,36 @@ import com.huawei.hms.ml.scan.HmsScan;
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 import com.hzlh.sdk.util.YToast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * 描述：登记卸货
+ * 描述：送达登记
  * 作者：Zhout
- * 日期：2022/11/26 18:08
+ * 日期：2023/1/8 19:38
  */
-public class EnrollActivity extends AppActivity implements View.OnClickListener {
+public class SendOkActivity extends AppActivity implements View.OnClickListener {
     private Context context = this;
     private final int REQUEST_CODE_SCAN_EXPRESS = 100;
-    private EditText etCarNo;
     private EditText etExpressNo;
     private ImageView ivScanExpressNo;
-    private LinearLayout layoutList;
-    private List<String> expressOrderList = new ArrayList<>();
-    private StorageOutListAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enroll);
+        setContentView(R.layout.activity_send_ok);
         initView();
 
     }
 
     private void initView() {
-        initHeader("卸货登记");
+        initHeader("送达登记");
 
-        etCarNo = findViewById(R.id.etCarNo);
         etExpressNo = findViewById(R.id.etExpressNo);
         ivScanExpressNo = findViewById(R.id.ivScanExpressNo);
-
-        ListView listView = findViewById(R.id.list_view);
-        layoutList = findViewById(R.id.layout_list);
         ivScanExpressNo.setOnClickListener(this);
-
-        adapter = new StorageOutListAdapter(context, expressOrderList);
-        listView.setAdapter(adapter);
     }
 
 
     @Override
     public void onClick(View view) {
-        if (TextUtils.isEmpty(etCarNo.getText().toString().trim())) {
-            YToast.shortToast(context, "请先输入车牌号！");
-            return;
-        }
         if (view == ivScanExpressNo) {
             // 权限检测
             int[] requestCodes = new int[]{PermissionVerifyUtil.CAMERA, PermissionVerifyUtil.WRITE_EXTERNAL_STORAGE};
@@ -120,16 +99,12 @@ public class EnrollActivity extends AppActivity implements View.OnClickListener 
     }
 
     private void commit() {
-        new ServerApi().unload(context, etCarNo.getText().toString().trim(), etExpressNo.getText().toString().trim(),
+        new ServerApi().arrived(context, etExpressNo.getText().toString().trim(),
                 new AppCallBack<AppBaseBean>(context) {
                     @Override
                     public void onResultOk(AppBaseBean result) {
                         super.onResultOk(result);
-                        YToast.shortToast(context, "卸货成功！");
-
-                        layoutList.setVisibility(View.VISIBLE);
-                        expressOrderList.add(etExpressNo.getText().toString().trim());
-                        adapter.notifyDataSetChanged();
+                        YToast.shortToast(context, "登记成功！");
                     }
 
                     @Override
@@ -139,6 +114,5 @@ public class EnrollActivity extends AppActivity implements View.OnClickListener 
                     }
                 });
     }
-
 }
 
