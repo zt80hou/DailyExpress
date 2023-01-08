@@ -11,9 +11,10 @@ public class ExpressInfo {
     private String customerName; //客户名称
     private String weight;//重量
     private String volume;//体积
-    private String packageStatus;//RECEIVED, STORAGED
-    private String updateTime;
-    private String packageName;
+    private String packageStatus;//RECEIVED,未上架；   STORAGED，在架子上； PACKED 已打包
+    private String updateTime;//更新时间
+    private String packageName;//物品名称
+    private String goodsShelvesNo;//所在货架号
 
 
     public String getExpressNo() {
@@ -78,5 +79,13 @@ public class ExpressInfo {
 
     public void setPackageName(String packageName) {
         this.packageName = packageName;
+    }
+
+    public String getGoodsShelvesNo() {
+        return goodsShelvesNo;
+    }
+
+    public void setGoodsShelvesNo(String goodsShelvesNo) {
+        this.goodsShelvesNo = goodsShelvesNo;
     }
 }

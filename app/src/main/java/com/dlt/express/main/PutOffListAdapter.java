@@ -18,9 +18,9 @@ import java.util.List;
  *
  * @author Zhout
  */
-public class PutOnListAdapter extends YBaseAdapter<ExpressInfo> {
+public class PutOffListAdapter extends YBaseAdapter<ExpressInfo> {
 
-    public PutOnListAdapter(Context context, List<ExpressInfo> dataList) {
+    public PutOffListAdapter(Context context, List<ExpressInfo> dataList) {
         super(context, dataList);
         this.dataList = dataList;
     }
@@ -39,9 +39,9 @@ public class PutOnListAdapter extends YBaseAdapter<ExpressInfo> {
         holder.tvName.setText(dataList.get(position).getPackageName());
         holder.tvTime.setText(dataList.get(position).getUpdateTime());
 
-        if ("RECEIVED".equals(dataList.get(position).getPackageStatus())) {
+        if ("STORAGED".equals(dataList.get(position).getPackageStatus())) {
             holder.ivState.setImageResource(R.drawable.icon_ng);
-        } else if ("STORAGED".equals(dataList.get(position).getPackageStatus())) {
+        } else if ("PACKED".equals(dataList.get(position).getPackageStatus())) {
             holder.ivState.setImageResource(R.drawable.icon_ok);
         }
 

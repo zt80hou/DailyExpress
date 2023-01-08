@@ -100,45 +100,32 @@ public class ServerApi {
     }
 
 
-
     /**
      * 下架
      *
      * @param context
-     * @param orderExpressNo    订单物流单号，扫码读取
-     * @param packageExpressNos 快递单号，扫码读取, 多个逗号分开
+     * @param expressNo 订单物流单号，扫码读取
      * @param callBack
      */
-    public void putOff(Context context, String orderExpressNo, String packageExpressNos, AppCallBack<AppBaseBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("orderExpressNo", orderExpressNo);
-                map.put("packageExpressNos", packageExpressNos);
-            }
-        });
+    public void putOff(Context context, String expressNo, AppCallBack<AppBaseBean> callBack) {
+        HashMap<String, String> map = HttpMap.getMap();
 
-        String url = Constants.baseAddr + "/expressPackage/out";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
+        String url = Constants.baseAddr + "/expressPackage/pack/" + expressNo;
+        MRequest.getInstance().post(context, url, AppBaseBean.class, map, callBack);
     }
 
     /**
      * 查询待下架快递
      *
      * @param context
-     * @param orderExpressNo 订单物流号
+     * @param orderNo  订单物流号
      * @param callBack
      */
-    public void queryWaitPutOffPackages(Context context, String orderExpressNo, AppCallBack<ExpressListBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("orderExpressNo", orderExpressNo);
-            }
-        });
+    public void queryWaitPutOffPackages(Context context, String orderNo, AppCallBack<ExpressListBean> callBack) {
+        HashMap<String, String> map = HttpMap.getMap();
 
-        String url = Constants.baseAddr + "/expressPackage/waitOutPkgs";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, ExpressListBean.class, callBack);
+        String url = Constants.baseAddr + "/memberOrder/packages/" + orderNo;
+        MRequest.getInstance().post(context, url, ExpressListBean.class, map, callBack);
     }
 
 

@@ -40,8 +40,7 @@
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:src="@drawable/icon_ok" />
+                android:gravity="center" />
         </RelativeLayout>
 
 

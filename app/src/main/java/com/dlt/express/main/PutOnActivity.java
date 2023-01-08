@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 描述：上架
  * 作者：Zhout
- * 日期：2020/8/9 18:53
+ * 日期：2023/1/8 13:53
  */
 public class PutOnActivity extends AppActivity implements View.OnClickListener {
     private Context context = this;
@@ -45,6 +45,7 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
     private TextView tvWaitScan;
     private TextView tvScanned;
     private TextView tvUnScan;
+    private TextView tvEmpty;
     private PutOnListAdapter adapter;
     private List<ExpressInfo> expressInfoList = new ArrayList<>();
 
@@ -69,12 +70,13 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
         tvScanned = findViewById(R.id.tv_scanned);
         tvUnScan = findViewById(R.id.tv_un_scan);
         listView = findViewById(R.id.list_view);
+        tvEmpty = findViewById(R.id.tvEmpty);
 
         ivScanShelveNo.setOnClickListener(this);
         ivScanExpressNo.setOnClickListener(this);
         adapter = new PutOnListAdapter(context, expressInfoList);
         listView.setAdapter(adapter);
-
+        listView.setEmptyView(tvEmpty);
     }
 
 
@@ -184,6 +186,7 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
             doPutOn();
         } else {
             YToast.shortToast(context, "该运单号不在列表中，请重试！");
+            tvCustomer.setText("");
         }
     }
 
@@ -234,6 +237,12 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
                         }
                         adapter.notifyDataSetChanged();
                     }
+
+                    @Override
+                    public void onResultError(ExpressListBean result) {
+                        super.onResultError(result);
+                        YToast.shortToast(context, result.getMsg());
+                    }
                 });
     }
 
@@ -248,6 +257,8 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
                         super.onResultOk(result);
                         YToast.shortToast(context, "上架成功！");
                         updateData(etExpressNo.getText().toString().trim());
+
+                        etExpressNo.setText("");
                     }
 
                     @Override
@@ -258,9 +269,5 @@ public class PutOnActivity extends AppActivity implements View.OnClickListener {
                 });
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
 

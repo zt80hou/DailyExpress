@@ -159,12 +159,20 @@
             </LinearLayout>
 
             <com.dlt.express.view.AtMostListView
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:background="@color/transparent"
                 android:id="@+id/list_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="暂无数据" />
 
         </LinearLayout>
 
