@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="条码："
+            android:text="运单号："
             android:textColor="@color/font_brown"
             android:textSize="16sp" />
 
@@ -610,7 +610,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -645,7 +646,8 @@
         android:textColor="@color/font_dark"
         android:textColorHint="@color/font_gray"
         android:textSize="14sp"
-        android:theme="@style/PrimaryEditText" />
+        android:theme="@style/PrimaryEditText"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="match_parent"

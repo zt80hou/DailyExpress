@@ -251,6 +251,7 @@ public class StorageInActivity extends AppActivity implements View.OnClickListen
 
     /**
      * 保留3位小数
+     *
      * @param f
      */
     private void keep3Point(float f) {
@@ -310,7 +311,7 @@ public class StorageInActivity extends AppActivity implements View.OnClickListen
         if (TextUtils.isEmpty(etVolume.getText().toString().trim())) {
             bean.setLength(Float.valueOf(etLength.getText().toString().trim()));
             bean.setWidth(Float.valueOf(etWidth.getText().toString().trim()));
-            bean.setHeight(Float.valueOf(etHeight.getText().toString().trim()));
+            bean.setHight(Float.valueOf(etHeight.getText().toString().trim()));
         } else {
             bean.setVolume(Float.valueOf(etVolume.getText().toString().trim()));
         }
@@ -331,7 +332,15 @@ public class StorageInActivity extends AppActivity implements View.OnClickListen
             @Override
             public void onResultOk(AppBaseBean result) {
                 super.onResultOk(result);
+                YToast.shortToast(context, "入库成功！");
+                finish();
 
+            }
+
+            @Override
+            public void onResultError(AppBaseBean result) {
+                super.onResultError(result);
+                YToast.shortToast(context, result.getMsg());
             }
         });
     }

@@ -23,7 +23,7 @@ import okhttp3.Request;
 public class MRequest extends YRequest {
     private static MRequest mInstance;
     private static HashMap<String, String> headerMap = new HashMap<>();
-    private final String TAG = "MRequest";
+    private final String TAG = "YRequest";
 
 
     public static MRequest getInstance() {

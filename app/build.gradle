@@ -19,13 +19,13 @@ android {
 
     }
     signingConfigs {
-        debug   {
+        debug {
             storeFile file('DailyExpress.jks')
             storePassword 'dlt2020'
             keyAlias 'DailyExpress'
             keyPassword 'dlt2020'
         }
-        release   {
+        release {
             storeFile file('DailyExpress.jks')
             storePassword 'dlt2020'
             keyAlias 'DailyExpress'
@@ -53,7 +53,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all {
             def df = new SimpleDateFormat("yyyyMMdd")
-            outputFileName = "DailyExpress_v${defaultConfig.versionName}_${df.format(new Date())}_${variant.name}_.apk"
+            outputFileName = "浩运物流" + "_v${defaultConfig.versionName}_${df.format(new Date())}_${variant.name}_.apk"
         }
     }
 

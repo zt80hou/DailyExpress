@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">天天集运</string>
+    <string name="app_name">浩运物流</string>
 
     <string-array name="goodsTypeNames">
         <item>"一般货物"</item>

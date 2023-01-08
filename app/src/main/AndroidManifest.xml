@@ -81,10 +81,12 @@
             android:theme="@style/status_bar_theme" />
         <activity
             android:name="com.dlt.express.main.PutOnActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.dlt.express.main.PutOffActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.dlt.express.main.UserInfoActivity"
             android:screenOrientation="portrait" />

@@ -6,155 +6,54 @@ package com.dlt.express.api;
  * 日期：2020/8/26 22:43
  */
 public class ExpressInfo {
-    private String id;
-    private String createTime;
+    private String expressNo; //快递单号
+    private String customerNo; //客户编号
+    private String customerName; //客户名称
+    private String weight;//重量
+    private String volume;//体积
+    private String packageStatus;//RECEIVED, STORAGED
     private String updateTime;
-    private String creatorId;
-    private String updatorId;
-    private boolean deleted;
-    private boolean disabled;
-    private String remark;
-    private String userId;
-    private String departmentId;
-    private String expressOrderId;
     private String packageName;
-    private String packageType;
-    private String fromExpressNo;
-    private String expressType;
-    private String goodsShelvesId;
-    private String packageStatus;
-    private String charge;
-    private double weight;
-    private double volume;
-    private double cost;
-    private String fileUploadId;
 
-    public String getId() {
-        return id;
+
+    public String getExpressNo() {
+        return expressNo;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setExpressNo(String expressNo) {
+        this.expressNo = expressNo;
     }
 
-    public String getCreateTime() {
-        return createTime;
+    public String getCustomerNo() {
+        return customerNo;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setCustomerNo(String customerNo) {
+        this.customerNo = customerNo;
     }
 
-    public String getUpdateTime() {
-        return updateTime;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getCreatorId() {
-        return creatorId;
+    public String getWeight() {
+        return weight;
     }
 
-    public void setCreatorId(String creatorId) {
-        this.creatorId = creatorId;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
-    public String getUpdatorId() {
-        return updatorId;
+    public String getVolume() {
+        return volume;
     }
 
-    public void setUpdatorId(String updatorId) {
-        this.updatorId = updatorId;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    public boolean isDisabled() {
-        return disabled;
-    }
-
-    public void setDisabled(boolean disabled) {
-        this.disabled = disabled;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(String departmentId) {
-        this.departmentId = departmentId;
-    }
-
-    public String getExpressOrderId() {
-        return expressOrderId;
-    }
-
-    public void setExpressOrderId(String expressOrderId) {
-        this.expressOrderId = expressOrderId;
-    }
-
-    public String getPackageName() {
-        return packageName;
-    }
-
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
-
-    public String getPackageType() {
-        return packageType;
-    }
-
-    public void setPackageType(String packageType) {
-        this.packageType = packageType;
-    }
-
-    public String getFromExpressNo() {
-        return fromExpressNo;
-    }
-
-    public void setFromExpressNo(String fromExpressNo) {
-        this.fromExpressNo = fromExpressNo;
-    }
-
-    public String getExpressType() {
-        return expressType;
-    }
-
-    public void setExpressType(String expressType) {
-        this.expressType = expressType;
-    }
-
-    public String getGoodsShelvesId() {
-        return goodsShelvesId;
-    }
-
-    public void setGoodsShelvesId(String goodsShelvesId) {
-        this.goodsShelvesId = goodsShelvesId;
+    public void setVolume(String volume) {
+        this.volume = volume;
     }
 
     public String getPackageStatus() {
@@ -165,43 +64,19 @@ public class ExpressInfo {
         this.packageStatus = packageStatus;
     }
 
-    public String getCharge() {
-        return charge;
+    public String getUpdateTime() {
+        return updateTime;
     }
 
-    public void setCharge(String charge) {
-        this.charge = charge;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public double getWeight() {
-        return weight;
+    public String getPackageName() {
+        return packageName;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
-    public String getFileUploadId() {
-        return fileUploadId;
-    }
-
-    public void setFileUploadId(String fileUploadId) {
-        this.fileUploadId = fileUploadId;
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 }

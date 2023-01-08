@@ -5,9 +5,8 @@ package com.dlt.express.base;
  * Created by 夏吧吧Ace on 2018/9/4.
  */
 public class AppBaseBean {
-    private String status; //	错误码；
-    private String msg; //	错误消息（见附录-错误码）；
-    private String info; // 错误消息详解
+    private String status; //	错误码； SUCCESS
+    private String msg; //	消息；
 
     public String getStatus() {
         return status;
@@ -25,12 +24,5 @@ public class AppBaseBean {
         this.msg = msg;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 }
 

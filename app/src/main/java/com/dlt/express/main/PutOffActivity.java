@@ -29,7 +29,7 @@ public class PutOffActivity extends AppActivity implements View.OnClickListener 
     }
 
     private void initView() {
-        initHeader("下架");
+        initHeader("拣货下架");
 
     }
 

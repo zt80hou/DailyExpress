@@ -36,7 +36,7 @@ public class StorageOutActivity extends AppActivity implements View.OnClickListe
     }
 
     private void initView() {
-        initHeader("出库");
+        initHeader("装车出库");
 
         layoutScan = findViewById(R.id.layoutScan);
         etCode = findViewById(R.id.et_code);

@@ -9,31 +9,162 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
             android:orientation="vertical">
 
 
-            <include layout="@layout/layout_scan" />
-
-            <include layout="@layout/layout_show_goods_info" />
-
-            <Button
-                android:id="@+id/btnCommit"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="14dp"
-                android:layout_marginBottom="14dp"
-                android:background="@drawable/shape_corner8_primary"
-                android:text="确认下架"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:theme="@style/PrimaryButton" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="订单号："
+                    android:textColor="@color/font_brown"
+                    android:textSize="16sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/etOrderNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/shape_corner8_gray_stroke"
+                        android:gravity="center_vertical"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="48dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_dark"
+                        android:textColorHint="@color/font_gray"
+                        android:textSize="14sp"
+                        android:theme="@style/PrimaryEditText" />
+
+                    <ImageView
+                        android:id="@+id/ivScanOrderNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_scan" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="运单号："
+                    android:textColor="@color/font_brown"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/etExpressNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/shape_corner8_gray_stroke"
+                        android:gravity="center_vertical"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="48dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_dark"
+                        android:textColorHint="@color/font_gray"
+                        android:textSize="14sp"
+                        android:theme="@style/PrimaryEditText" />
+
+                    <ImageView
+                        android:id="@+id/ivScanExpressNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@drawable/icon_scan" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text=""
+                    android:textColor="@color/font_brown"
+                    android:textSize="16sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tv_wait_scan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/font_brown"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_scanned"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/font_brown"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_un_scan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/font_brown"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.dlt.express.view.AtMostListView
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="@color/transparent"
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

@@ -10,7 +10,6 @@ import com.dlt.express.util.JsonUtil;
 import com.hzlh.sdk.net.HttpMap;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * 描述：服务端相关Api
@@ -54,7 +53,7 @@ public class ServerApi {
      */
     public void queryWarehouse(Context context, int pageIndex, AppCallBack<WareHouseListBean> callBack) {
         String json = "{\"deleted\":[{\"datas\":[false],\"model\":\"EQUAL\"}]}";
-        String url = Constants.baseAddr + "/memberWarehouse/get/list/condition/member?page=" + pageIndex + "&size=20";
+        String url = Constants.baseAddr + "/warehouse/get/list/condition/member?page=" + pageIndex + "&size=20";
         MRequest.getInstance().postJson(context, url, json, WareHouseListBean.class, callBack);
     }
 
@@ -76,84 +75,31 @@ public class ServerApi {
      * 上架
      *
      * @param context
-     * @param goodsShelvesId    货架ID，扫码读取
-     * @param packageExpressNos 快递单号，扫码读取, 多个逗号分开
+     * @param shelvesNo 货架ID，扫码读取
+     * @param expressNo 快递单号
      * @param callBack
      */
-    public void putOn(Context context, String goodsShelvesId, List<String> packageExpressNos, AppCallBack<AppBaseBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("goodsShelvesId", goodsShelvesId);
-                map.put("packageExpressNos", packageExpressNos.toString().replace("[", "").replace("]", "").replace(" ", ""));
-            }
-        });
+    public void putOn(Context context, String shelvesNo, String expressNo, AppCallBack<AppBaseBean> callBack) {
+        HashMap<String, String> map = HttpMap.getMap();
 
-        String url = Constants.baseAddr + "/expressPackage/storage";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
-    }
-
-    /**
-     * 上架
-     *
-     * @param context
-     * @param goodsShelvesId    货架ID，扫码读取
-     * @param packageExpressNos 快递单号，扫码读取, 多个逗号分开
-     * @param callBack
-     */
-    public void putOn(Context context, String goodsShelvesId, String packageExpressNos, AppCallBack<AppBaseBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("goodsShelvesId", goodsShelvesId);
-                map.put("packageExpressNos", packageExpressNos);
-            }
-        });
-
-        String url = Constants.baseAddr + "/expressPackage/storage";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
+        String url = Constants.baseAddr + "/expressPackage/doStorage/" + shelvesNo + "/" + expressNo;
+        MRequest.getInstance().post(context, url, AppBaseBean.class, map, callBack);
     }
 
     /**
      * 查询待上架快递
      *
      * @param context
-     * @param goodsShelvesId 货架ID
+     * @param shelvesNo 货架ID
      * @param callBack
      */
-    public void queryWaitPutOnPackages(Context context, String goodsShelvesId, AppCallBack<ExpressListBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("goodsShelvesId", goodsShelvesId);
-            }
-        });
-
-        String url = Constants.baseAddr + "/expressPackage/waitStoragePkgs";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, ExpressListBean.class, callBack);
+    public void queryWaitPutOnPackages(Context context, String shelvesNo, AppCallBack<ExpressListBean> callBack) {
+        HashMap<String, String> map = HttpMap.getMap();
+        String url = Constants.baseAddr + "/expressPackage/storage/waiting/" + shelvesNo;
+        MRequest.getInstance().post(context, url, ExpressListBean.class, map, callBack);
     }
 
 
-    /**
-     * 下架
-     *
-     * @param context
-     * @param orderExpressNo    订单物流单号，扫码读取
-     * @param packageExpressNos 快递单号，扫码读取, 多个逗号分开
-     * @param callBack
-     */
-    public void putOff(Context context, String orderExpressNo, List<String> packageExpressNos, AppCallBack<AppBaseBean> callBack) {
-        HashMap<String, String> map = HttpMap.getMap(new HttpMap.Action() {
-            public void addParams(HashMap<String, String> map) {
-                map.put("orderExpressNo", orderExpressNo);
-                map.put("packageExpressNos", packageExpressNos.toString().replace("[", "").replace("]", "").replace(" ", ""));
-            }
-        });
-
-        String url = Constants.baseAddr + "/expressPackage/out";
-        String json = JsonUtil.toJson(map);
-        MRequest.getInstance().postJson(context, url, json, AppBaseBean.class, callBack);
-    }
 
     /**
      * 下架

@@ -60,7 +60,7 @@ public class AddressListActivity extends AppActivity {
     }
 
     private void initView() {
-        initHeader("收货人地址列表");
+        initHeader("收货人列表");
 
         refreshLayout = findViewById(R.id.refresh_layout);
         listView = findViewById(R.id.listView);

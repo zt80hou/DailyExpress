@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_square_divider_empty"
+        android:divider="@drawable/shape_divider"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:showDividers="middle"
+        android:stretchColumns="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="24dp"
+                android:padding="8dp"
+                android:text="ABS461368150"
+                android:textColor="@color/font_brown"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:src="@drawable/icon_ok" />
+        </RelativeLayout>
+
+
+        <TableRow
+            android:divider="@drawable/shape_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="3"
+                android:padding="4dp"
+                android:text="货物名称"
+                android:textColor="@color/font_brown"
+                android:textSize="14dp" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="4dp"
+                android:text="2023-01-08 14:56:23"
+                android:textColor="@color/font_brown"
+                android:textSize="13dp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

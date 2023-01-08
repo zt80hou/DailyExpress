@@ -13,7 +13,7 @@ public class ReceivedRequestBean {
 
     private float length; // 长度/米，必填
     private float width; //宽度/米，必填
-    private float height;//高度/米，必填
+    private float hight;//高度/米，必填
     private float weight; // 重量kg，必填
     private float volume; // 体积，必填（体积和长宽高，填一个即可，如果有长宽高，可以计算体积，如果客户填了体积，就不再计算了）
 
@@ -84,12 +84,12 @@ public class ReceivedRequestBean {
         this.width = width;
     }
 
-    public float getHeight() {
-        return height;
+    public float getHight() {
+        return hight;
     }
 
-    public void setHeight(float height) {
-        this.height = height;
+    public void setHight(float hight) {
+        this.hight = hight;
     }
 
     public float getWeight() {

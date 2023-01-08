@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author Zhout
  */
-public class WareHouseAdapter extends YBaseAdapter implements SpinnerAdapter {
+public class WareHouseAdapter extends YBaseAdapter<WareHouseListBean.DataBean.ContentBean> implements SpinnerAdapter {
     private List<WareHouseListBean.DataBean.ContentBean> dataList;
 
     public WareHouseAdapter(Context context, List<WareHouseListBean.DataBean.ContentBean> dataList) {

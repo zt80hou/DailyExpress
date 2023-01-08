@@ -17,9 +17,7 @@ import java.util.List;
  *
  * @author Zhout
  */
-public class AddressListAdapter extends YBaseAdapter {
-
-    private List<AddressListBean.DataBean.ContentBean> dataList;
+public class AddressListAdapter extends YBaseAdapter<AddressListBean.DataBean.ContentBean> {
 
     public AddressListAdapter(Context context, List<AddressListBean.DataBean.ContentBean> dataList) {
         super(context, dataList);

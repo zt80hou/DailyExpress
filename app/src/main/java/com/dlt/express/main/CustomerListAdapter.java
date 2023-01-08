@@ -12,13 +12,13 @@ import com.hzlh.sdk.util.YBaseAdapter;
 import java.util.List;
 
 /**
- * 描述：客户列适配器
+ * 描述：客户列表适配器
  * 日期: 2022/12/4 11:37
  *
  * @author Zhout
  */
-public class CustomerListAdapter extends YBaseAdapter {
-    private List<CustomerListBean.DataBean.ContentBean> dataList ;
+public class CustomerListAdapter extends YBaseAdapter<CustomerListBean.DataBean.ContentBean> {
+
     public CustomerListAdapter(Context context, List<CustomerListBean.DataBean.ContentBean> dataList) {
         super(context, dataList);
         this.dataList = dataList;
