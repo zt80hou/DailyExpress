@@ -14,6 +14,7 @@ import com.dlt.express.Constants;
 import com.dlt.express.R;
 import com.dlt.express.base.AppFragment;
 import com.dlt.express.main.CheckActivity;
+import com.dlt.express.main.DispatchActivity;
 import com.dlt.express.main.EnrollActivity;
 import com.dlt.express.main.PutOffActivity;
 import com.dlt.express.main.PutOnActivity;
@@ -89,6 +90,8 @@ public class HomeFragment extends AppFragment implements View.OnClickListener {
                 startActivity(StorageOutActivity.class);
             } else if (view == layoutEnroll) {//卸货登记
                 startActivity(EnrollActivity.class);
+            } else if (view == layoutDispatch) {// 开始派单
+                startActivity(DispatchActivity.class);
             } else if (view == layoutSend) {//送达登记
                 startActivity(SendOkActivity.class);
             }
